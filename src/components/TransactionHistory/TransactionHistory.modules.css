@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.transaction-history {
+  overflow: hidden;
+  text-transform: capitalize;
+  width: 800px;
+  margin-left: 16px;
+  margin-bottom: 20px;
+  background: rgba(142, 227, 212, 0.22);
+}
+.transaction-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.18;
+  background: rgba(142, 227, 212);
+}
+tbody {
+  font-size: 14px;
+  font-weight: 600;
+}
+tr,
+th {
+  padding: 6px;
+}
+td {
+  padding: 5px;
+  border: 0.5px solid #010101;
+}
