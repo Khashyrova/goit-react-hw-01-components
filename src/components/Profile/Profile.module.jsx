@@ -1,11 +1,6 @@
-p,
-h2,
-ul {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-}
-.profile {
+import styled from 'styled-components';
+
+export const ProfileBody = styled.div`
   margin: 0 auto;
   background-color: beige;
   padding: 20px;
@@ -19,25 +14,34 @@ ul {
   border: 1px solid #010101;
   border-radius: 5px;
   margin-bottom: 40px;
-}
-.description {
+`;
+
+export const ProfileDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-.avatar {
+`;
+
+export const ProfileAvatar = styled.img`
   width: 100%;
   height: auto;
-}
-.stats {
+`;
+
+export const ProfileName = styled.p``;
+export const ProfileTag = styled.p``;
+export const ProfileLocation = styled.p``;
+export const ProfileStats = styled.ul`
+  padding: 0;
+  list-style: none;
   margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
-}
-.item-prof {
+`;
+
+export const ProfileItem = styled.li`
   width: 175px;
   height: 100%;
   padding: 10px;
@@ -47,10 +51,12 @@ ul {
   gap: 20px;
   border: 1px solid #010101;
   background-color: #fff;
-}
-.label-prof {
+`;
+
+export const ProfileLabel = styled.span`
   font-weight: 300;
-}
-.quantity {
+`;
+
+export const ProfileQuantity = styled.span`
   font-weight: 700;
-}
+`;

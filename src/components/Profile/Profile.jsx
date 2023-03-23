@@ -1,5 +1,16 @@
 import ProtoType from 'prop-types';
-import './Profile.modules.css';
+import {
+  ProfileBody,
+  ProfileDescription,
+  ProfileAvatar,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  ProfileStats,
+  ProfileItem,
+  ProfileLabel,
+  ProfileQuantity,
+} from './Profile.module.jsx';
 
 const Profile = ({
   username,
@@ -9,28 +20,28 @@ const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
-      <ul className="stats">
-        <li className="item-prof">
-          <span className="label-prof ">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li className="item-prof">
-          <span className="label-prof ">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li className="item-prof">
-          <span className="label-prof ">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+    <ProfileBody>
+      <ProfileDescription>
+        <ProfileAvatar src={avatar} alt="avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>@{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
+      </ProfileDescription>
+      <ProfileStats>
+        <ProfileItem>
+          <ProfileLabel>Followers</ProfileLabel>
+          <ProfileQuantity>{followers}</ProfileQuantity>
+        </ProfileItem>
+        <ProfileItem>
+          <ProfileLabel>Views</ProfileLabel>
+          <ProfileQuantity>{views}</ProfileQuantity>
+        </ProfileItem>
+        <ProfileItem>
+          <ProfileLabel>Likes</ProfileLabel>
+          <ProfileQuantity>{likes}</ProfileQuantity>
+        </ProfileItem>
+      </ProfileStats>
+    </ProfileBody>
   );
 };
 

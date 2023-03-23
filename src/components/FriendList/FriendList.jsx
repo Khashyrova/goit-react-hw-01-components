@@ -1,30 +1,35 @@
 import ProtoType from 'prop-types';
-import './FriendList.modules.css';
+import {
+  FriendListContainer,
+  FriendsList,
+  FriendListItem,
+  FriendListNameOnLine,
+  FriendListNameIsNotOnLine,
+  FriendListAvatar,
+  FriendListName,
+} from './FriendList.module.jsx';
 
 const FriendList = ({ friends }) => {
   return (
-    <div className="friend-container">
-      <ul className="friend-list">
+    <FriendListContainer>
+      <FriendsList>
         {friends.map(({ avatar, name, isOnline, id }) => {
           return (
-            <li className="friend-item" key={id}>
+            <FriendListItem key={id}>
               {isOnline ? (
-                <span className="status-on-line">{isOnline}</span>
+                <FriendListNameOnLine>{isOnline}</FriendListNameOnLine>
               ) : (
-                <span className="status">{isOnline}</span>
+                <FriendListNameIsNotOnLine>
+                  {isOnline}
+                </FriendListNameIsNotOnLine>
               )}
-              <img
-                className="friend-avatar"
-                src={avatar}
-                alt="User avatar"
-                width="58"
-              />
-              <p className="friend-name">{name}</p>
-            </li>
+              <FriendListAvatar src={avatar} alt="User avatar" width="58" />
+              <FriendListName>{name}</FriendListName>
+            </FriendListItem>
           );
         })}
-      </ul>
-    </div>
+      </FriendsList>
+    </FriendListContainer>
   );
 };
 
